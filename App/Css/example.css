@@ -1,0 +1,21 @@
+.navbar-default .navbar-nav > .active .active-color > a, .navbar-default .navbar-nav >
+ .active > a:hover {
+
+background-color: #D3FA7F;
+color: white;
+font-weight: bold;
+ }
+
+.navbar-default .navbar-nav > .active .active-color > a, .navbar-default .navbar-nav >
+ .active > a {
+ 	background-color: #22C516;
+ 	color: white;
+ }
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	background-color: #22C516;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a {
+	color:white;
+	font-weight: bold;
+}
