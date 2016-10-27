@@ -19,3 +19,14 @@ font-weight: bold;
 	color:white;
 	font-weight: bold;
 }
+
+.navbar-brand {
+	height: 20%;
+	width: 20px;
+position: relative;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
