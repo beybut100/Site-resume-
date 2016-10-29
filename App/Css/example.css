@@ -1,14 +1,19 @@
+.container-fluid {
+	background-color: #22C516;
+}
+
 .navbar-default .navbar-nav > .active .active-color > a, .navbar-default .navbar-nav >
  .active > a:hover {
 
 background-color: #D3FA7F;
 color: white;
 font-weight: bold;
+line-height: 30px;
  }
 
 .navbar-default .navbar-nav > .active .active-color > a, .navbar-default .navbar-nav >
  .active > a {
- 	background-color: #22C516;
+ 	background-color: #D3FA7F;
  	color: white;
  }
 
@@ -18,15 +23,21 @@ font-weight: bold;
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a {
 	color:white;
 	font-weight: bold;
+	line-height: 30px;
+}
+.navbar-nav > li:hover {
+background-color: #D3FA7F;
 }
 
-.navbar-brand {
-	height: 20%;
-	width: 20px;
-position: relative;
+
+.logo  {
+	height: 100%;
+	width: auto;
+position: absolute;
+
+right: 10px;
 }
-.navbar-brand>img {
-  height: 100%;
-  padding: 15px;
-  width: auto;
+
+.logo:hover {
+	 background-color: #FFAD00;
 }
