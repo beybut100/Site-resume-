@@ -2,7 +2,7 @@
 	background-color: #22C516;
 }
 
-.navbar-default .navbar-nav > .active .active-color > a, .navbar-default .navbar-nav >
+ .navbar-default .navbar-nav >
  .active > a:hover {
 
 background-color: #D3FA7F;
@@ -20,13 +20,18 @@ line-height: 30px;
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
 	background-color: #22C516;
 }
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav > li > a {
 	color:white;
 	font-weight: bold;
 	line-height: 30px;
 }
+.navbar-nav > li:visited {
+	background-color: red;
+}
+
 .navbar-nav > li:hover {
 background-color: #D3FA7F;
+color: white;
 }
 
 
