@@ -73,6 +73,7 @@ right: 10px;
 }
 .show-form {
 	display: block;
+	position: fixed;
 }
 .hide-form {
 	display: none;
