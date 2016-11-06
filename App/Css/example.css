@@ -59,7 +59,7 @@ right: 10px;
 
 .contact-form {
 	width: 40%;
-	height: 55%;
+	min-height: 55%;
 	background: white;
 	border: solid 3px blue;
 	border-radius: 10px ;

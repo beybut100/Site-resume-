@@ -8,7 +8,7 @@ myApp.controller("phonesController", function ($scope) {
 
 myApp.controller("NumberPhoneController", function ($scope) {
     $scope.show = function(event) {
-		$(".contact-form hide-form").removeClass("hide-form").addClass("show-form");
+		$(".contact-form ").removeClass("hide-form");
 		
 	}
 });
