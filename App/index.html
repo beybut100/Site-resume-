@@ -46,14 +46,14 @@
 
 </nav>
 
-<div class = "MyContacts">
+<div class = "MyContacts" ng-controller="NumberPhoneController">
   
   <h2> Мої контакти </h2>
 <img src="Img/Telephone.png">
 <button type="button" class="btn btn-info" ng-click="show($event)">Запросити номер</button>
 
 
-<form role="form"  class="contact-form show-form hide-form" ng-controller="NumberPhoneController" >
+<form role="form"  class="contact-form show-form hide-form"  >
 <button type="button" class="close" aria-hidden="true">&times;</button>
   <div class="form-group " >
     <label for="exampleInputEmail1">Ваше ім'я</label>
