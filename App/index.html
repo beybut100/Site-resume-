@@ -56,7 +56,7 @@
 <form role="form"  class="contact-form show-form hide-form modal-content" name="requestnumberphone"  novalidate >
 <button type="button" class="close" aria-hidden="true" ng-click="hide($event)">&times;</button>
   <div class="form-group " >
-    <label for="exampleInputEmail1">Ваше ім'я</label>\
+    <label for="exampleInputEmail1">Ваше ім'я</label>
     <div ></div>
     <input type="text" ng-model="text" class="form-control" id="nameman" placeholder="Наприклад: Тарас" ng-pattern="/[а-яА-ЯЇїІі]/"  
     name="nameman"  required  >
@@ -85,13 +85,13 @@
 
   <div class="description">
   <label for="textfieldforrequest">Для чого тобі це потрібно?</label>
-<textarea class="form-control" rows="6" id="requestfield" name="requestfield" required ng-model="аааа"> </textarea>
+<textarea class="form-control" rows="6" id="requestfield" name="requestfield" required ng-model="field"> </textarea>
  
   </div>
   <span class="help-block" ng-show="requestnumberphone.requestfield.$error.required && (requestnumberphone.requestfield.$touched || 
   requestnumberphone.$submitted) ">Запишіть для чого вам потрібен номер</span>
 
-   <button type="submit" class="btn btn-default to-require-number btn-lg center-block " ng-class="[style4, {form.$dirty: false}]" >Запросити номер</button>
+   <button type="submit" class="btn btn-default to-require-number btn-lg center-block " ng-class="['style4',{!requestnumberphone.$dirty}]" >Запросити номер</button>
 
 </form>
 </div>
