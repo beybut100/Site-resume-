@@ -20,3 +20,8 @@ myApp.controller("NumberPhoneController", function ($scope) {
 });
 
 
+myApp.controller("OnlyKirilicSymbol", function ($scope) {
+	$scope.change =  function(event, comment) { var pattern = new RegExp("\w+"); var result = pattern.test(comment); if (!result) {event.preventDefault(); }}
+
+	}
+});

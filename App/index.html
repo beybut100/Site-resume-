@@ -85,7 +85,8 @@
 
   <div class="description" ng-controller="OnlyKirilicSymbol" >
   <label for="textfieldforrequest">Для чого тобі це потрібно?</label>
-<textarea class="form-control" rows="6" id="requestfield" name="requestfield" required ng-model="field" ng-change="change($event,comment)"> </textarea>
+<textarea class="form-control" rows="6" id="requestfield" name="requestfield" required ng-model="field" 
+ng-change="change($event,comment)"> </textarea>
  
   </div>
   <span class="help-block" ng-show="requestnumberphone.requestfield.$error.required && (requestnumberphone.requestfield.$touched || 
