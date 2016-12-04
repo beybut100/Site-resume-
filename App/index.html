@@ -4,7 +4,7 @@
         <title>Главная страница</title>
         <meta charset="UTF-8">
 
-    
+
 
         <script src= "libraries/AngularJS/angular.min (1).js"></script>
 
@@ -17,11 +17,11 @@
         <script type = "text/javascript" src = "libraries/Bootstrap/bootstrap-3.3.6/dist/js/bootstrap.js"></script>
 
        <script type="text/javascript" src = "Js/myApp.js"></script>
-<script type="text/javascript" src="Js/Controllers/menu-controller-example.js"></script> 
+<script type="text/javascript" src="Js/Controllers/menu-controller-example.js"></script>
     </head>
     <body>
   <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid" style="height: 60px">
+  <div class="container-fluid" style="height: 60px" ng-controller="LogoController">
     <div class="navbar-header">
       <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
         <span class="sr-only">Toggle navigation</span>
@@ -29,85 +29,50 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-  
+
     <div id="navbarCollapse" class="collapse navbar-collapse" ng-controller = "phonesController">
       <ul class="nav navbar-nav standard-link">
        <li class="active active-color" id="active-color"><a href="#" ng-click="select($event)">Про мене</a></li>
         <li class= "standard-link"><a href="#" ng-click="select($event)">Інтерактивна вікторина</a></li>
         <li class= "standard-link"><a href="#" ng-click="select($event)">Контакти</a></li>
 
-      </ul> 
+      </ul>
 
         </div>
-    
-    </div>
-         <img src="img/new-logo.png" class="img-responsive logo">   
+
+    </div  >
+
+         <img src="img/new-logo.png" class="img-responsive logo" ng-click="changecolor($event)">
   </div>
 
 </nav>
 
-<div class = "MyContacts" ng-controller="NumberPhoneController">
-  
-  <h2> Мої контакти </h2>
-<img src="Img/Telephone.png">
-<button type="button" class="btn btn-info" ng-click="show($event)">Запросити номер</button>
+<div class="about-me">
 
-<div class="modal-body">
-<form role="form"  class="contact-form show-form hide-form modal-content" name="requestnumberphone"  novalidate >
-<button type="button" class="close" aria-hidden="true" ng-click="hide($event)">&times;</button>
-  <div class="form-group " >
-    <label for="exampleInputEmail1">Ваше ім'я</label>
-    <div ></div>
-    <input type="text" ng-model="text" class="form-control" id="nameman" placeholder="Наприклад: Тарас" ng-pattern="/[а-яА-ЯЇїІі]/"  
-    name="nameman"  required  >
+<div class="MyPhoto">
+<img class="photo" src="Img/myPhoto.jpg">
+<img class="photo2" src="Img/myPhoto2.jpg">
+<img class="figure" src="Img/figurenew.png">
 
-    <span class="help-block" ng-show="requestnumberphone.nameman.$error.pattern && (requestnumberphone.nameman.$touched || requestnumberphone.nameman.$submitted)">Вводьте тільки кирилічні символи</span>
-      <span class="help-block" ng-show="requestnumberphone.nameman.$error.required && (requestnumberphone.nameman.$touched || requestnumberphone.$submitted)">Впишіть будь-ласка своє ім'я</span>
-
-  </div>
-  <div class="form-group" ng-controller="NumberPhoneController">
-    <label for="exampleInputPassword1">Ваш номер телефону</label>
- <input type="number" class="form-control" ng-minlength="9" ng-maxlength="12" min="0" id="phone" name="phone" placeholder="Phone" ng-model="user.phone"  required>
-      <span class="help-block" ng-show="requestnumberphone.phone.$error.required && (requestnumberphone.phone.$touched || requestnumberphone.$submitted)">
-                     Номер телефону обов'язковий
-      </span>
-      <div class="help-block" 
-
-            ng-show="((requestnumberphone.phone.$error.minlength || 
-                      requestnumberphone.phone.$error.maxlength) && 
-                      requestnumberphone.phone.$dirty) ">
-                      Номер телефону повинна бути від 9 до 12 цифр
-       </div>
-    <span ng-show="requestnumberphone.phone.$error.min">
-   Номер телефону не може містити від'ємних елементів
-    </span>
-  </div>
-
-  <div class="description" ng-controller="OnlyKirilicSymbol" >
-  <label for="textfieldforrequest">Для чого тобі це потрібно?</label>
-<textarea class="form-control" rows="6" id="requestfield" name="requestfield" required ng-model="field" 
-ng-change="change($event,comment)"> </textarea>
- 
-  </div>
-  <span class="help-block" ng-show="requestnumberphone.requestfield.$error.required && (requestnumberphone.requestfield.$touched || 
-  requestnumberphone.$submitted) ">Запишіть для чого вам потрібен номер</span>
-
-   <button type="submit" class="btn btn-default to-require-number btn-lg center-block " ng-class="{'style4' : !requestnumberphone.$dirty}" >Запросити номер</button>
-
-</form>
 </div>
-<div class="MyLocation pull-right">
-<iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5084.406461047285!2d30.38802954954754!3d50.41868503344077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sua!4v1478465195850" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+<div class=" MyBiography ">
+  <blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
 </div>
-<div class="MyEmail"> 
-<address>
-  Email: beybut27@ukr.net <br>
-  Skype: uriy-zelinskiy <br>
-  Facebook: <a href="https://www.facebook.com/profile.php?id=100001246336768">Перейти!</a>
-</address>
+<div class="timing-line">
+<div class="line">
+
+</div>
+<div class="wheel">
+
+</div>
 </div>
 </div>
 
-  
+
+
+
     </body>
 </html>

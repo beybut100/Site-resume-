@@ -70,12 +70,12 @@ right: 10px;
 .to-require-number {
 	margin-top: 20px;
 	position: relative;
-	
-	
+
+
 }
 .show-form {
 	display: block;
-	
+
 }
 .hide-form {
 	display: none;
@@ -90,4 +90,87 @@ address {
 
 .style4 {
 	visibility:  hidden;
+}
+
+
+.about-me {
+	position: absolute;
+	border: 2px solid black;
+	margin-top: 7%;
+	min-height: 100%;
+
+	width: 100%;
+
+
+}
+
+.MyPhoto {
+	position: absolute;
+	border: 2px solid black;
+	height: 50%;
+	width: 30%;
+	margin-top: 2%;
+	margin-left: 2%;
+	 }
+.photo {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.photo2 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+}
+
+.figure {
+	position: absolute;
+	height: 80%;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+
+	border: none;
+	display: none;
+}
+
+.MyPhoto:hover .figure{
+	display: block;
+}
+
+.MyBiography {
+	position: absolute;
+	left: 40%;
+	right: 15%;
+	top: 20%;
+}
+
+.line {
+	position: absolute;
+	top: 30%;
+	width: 100%;
+	background-color: #4E9600;
+	height: 10px;
+}
+
+.wheel {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	top: 10%;
+	left: 50%;
+	border: 6px double #9BF33D;
+	border-radius: 50%;
+	background: green;
+}
+.timing-line {
+	height: 20%;
+	width: 60%;
+	position: absolute;
+	margin-top:  20%;
+	top: 70%;
+	left: 30%;
+	background-color: white;
+
 }
