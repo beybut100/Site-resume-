@@ -1,3 +1,8 @@
+html, body {
+    height: 150%;
+}
+
+
 .container-fluid {
 	background-color: #22C516;
 }
@@ -117,6 +122,7 @@ address {
  position: absolute;
  height: 50px;
  width: 50px;
+
  top: 10%;
  left: 50%;
  border: 6px double #9BF33D;
@@ -154,29 +160,31 @@ address {
 	width: 100%;
 	margin-top: 5%;
 
-}
-.skills-block {
-
+};
+.container {
+	height: 100%;
+};
+.block {
+	height: 150%;
 };
 
+.name-section h1 {
+  text-align: right;
+};
+.iconcompany {
+  display: none;
+};
+.selectrow:hover .iconcompany {
+  display: block !important;
+};
+.hobby-block{
+background-color: red;
+height: 20%;
 
-.jquery-block {
-	background-color: red;
-	height: 200px;
-	margin: 1%;
-}
-.angular-block {
-	background-color: red;
-	height: 200px;
-		margin: 1%;
-}
-.JS-block {
-	background-color: red;
-	height: 200px;
-		margin: 1%;
-}
-.HTML-block {
-	background-color: red;
-	height: 200px;
-		margin: 1%;
+
+};
+.inside-block {
+  background-color: blue;
+  height: 50%;
+  width: 100%;
 }

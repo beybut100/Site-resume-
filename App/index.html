@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app ="myApp" >
+<html ng-app ="myApp" style="height: 100%;" >
     <head>
         <title>Главная страница</title>
         <meta charset="UTF-8">
@@ -19,7 +19,7 @@
        <script type="text/javascript" src = "Js/myApp.js"></script>
 <script type="text/javascript" src="Js/Controllers/menu-controller-example.js"></script>
     </head>
-    <body>
+    <body style="height: 100%;" >
   <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid" style="height: 60px" ng-controller="LogoController">
     <div class="navbar-header">
@@ -84,27 +84,100 @@
         </div>
 
       </section>
-      <section style="margin-top: 50px;">
-        <div class="container skills-block" style="border: solid red 2px">
-          <div class="row">
-            <div class="jquery-block">
-              <label class="block-name">Jquerry</label>
-            </div>
-          <div class="col-md-2 angular-block" >
-              <label class="block-name">Angular</label>
-          </div>
-          <div class="col-md-2 JS-block" >
-              <label class="block-name">JS</label>
-          </div>
-          <div class="col-md-2 HTML-block" >
-              <label class="block-name">HTML</label>
+
+
+      <div style= "height: 100%"  > <!-- треба кожному блоку навыть html поставити хейт 100% -->
+      <div style="height: 50%; text-align:center; ">
+
+      <div style="height: 100%; background-color: blue; width: 22%; display: inline-block; margin: 0.5% ">
+      <h2 style="vertical-align: middle; margin-top: 50%; color: white; font-size: 200%; font-weight: bold;
+      color: white;"> Angular </h2>
+      </div>
+
+      <div style="height: 100%; background-color: yellow; width: 22%; display: inline-block; margin: 0.5%;">
+      <h2 style="vertical-align: middle; margin-top: 50%; color: white; font-size: 200%;  font-weight: bold;"> Javascript </h2>
+
+      </div>
+
+      <div style="height: 100%; background-color: red; width: 22%; display: inline-block; margin: 0.5%;">
+      <h2 style="vertical-align: middle; margin-top: 50%; color: white; font-size: 200%;  font-weight: bold;"> Html </h2>
+      </div>
+
+      <div style="height: 100%; background-color: green; width: 22%; display: inline-block; margin: 0.5%;">
+
+      <h2 style="vertical-align: middle; margin-top: 50%; color: white; font-size: 200%;  font-weight: bold;"> Css </h2>
+      </div>
+    </div>
+      <div style="height: 50%; text-align:center; margin-top: 2%; ">
+
+      <div style="height: 100%; background-color: orange; width: 22%; display: inline-block; margin: 0.5% ">
+      <h2 style="vertical-align: middle; margin-top: 50%; color: white; font-size: 200%; font-weight: bold;
+      color: white;"> Bootstrap </h2>
+      </div>
+
+      <div style="height: 100%; background-color: grey; width: 22%; display: inline-block; margin: 0.5%;">
+      <h2 style="vertical-align: middle; margin-top: 50%; color: white; font-size: 200%;  font-weight: bold;"> Jquery </h2>
+
+      </div>
+
+      <div style="height: 100%; background-color: purple; width: 22%; display: inline-block; margin: 0.5%;">
+      <h2 style="vertical-align: middle; margin-top: 50%; color: white; font-size: 200%;  font-weight: bold;"> Git </h2>
+      </div>
+
+      <div style="height: 100%; background-color: olive; width: 22%; display: inline-block; margin: 0.5%;">
+
+      <h2 style="vertical-align: middle; margin-top: 50%; color: white; font-size: 200%;  font-weight: bold;"> Photoshop </h2>
+      </div>
+
+
+    </div>
+
+      </div>
+
+<section style="margin-top: 4%;">
+  <div class="container">
+<h1 class="name-section text-center"> Мій досвід роботи </h1>
+<table class="table table-hover">
+  <tr class="selectrow">
+    <td> ТОВ "Укрфінанси" </td>
+    <td> 1 рік </td>
+    <td> <div class="iconcompany hidden" > <img class="img-rounded" src=" Img/ukrfinance.gif"> </div> Емблема </td>
+  </tr>
+  <tr>
+    <td> CreditCollectionGroup </td>
+    <td> 6 місяців </td>
+    <td> <button class="btn btn-info"> Емблема </button>  </td>
+  </tr>
+  <tr>
+    <td> CreditCollectionGroup </td>
+    <td> 4 місяці </td>
+    <td> <button class="btn btn-info"> Емблема </button>  </td>
+  </tr>
+
+</table>
+<div>
+</section>
+
+<section style="margin-top: 2%; height: 100%;" >
+  <div class ="myhobby container" style="height: 100%;">
+  <h1 class="name-section text-center"> Мої інтереси</h1>
+    <div class="col-md-4 firsthobby hobby-block">
+      <div class="col-md-4 inside-block  " >
+        <img sr="Img/biatlon.jpg" class="PhotobyHobby">
+      </div>
+    </div>
+      <div class="col-md-4 secondhobby hobby-block">
+        <div class="col-md-6 " >
+          <img sr="Img/biatlon.jpg" class="PhotobyHobby">
+        </div>
+      </div>
+        <div class="col-md-4 thirdhobby hobby-block">
+          <div class="col-md-6 " >
+            <img sr="Img/biatlon.jpg" class="PhotobyHobby">
           </div>
         </div>
-        </div>
-
-      </section>
-
-
-
+  </div>
+</section>
     </body>
+
 </html>
