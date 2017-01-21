@@ -61,3 +61,17 @@ myApp.controller("LogoController", function ($scope) {
   return randomindexvalue;
  }
 });
+
+myApp.controller("TestController", function ($scope) {
+ $scope.labels = ["Completed", "Not completed"];
+ $scope.data = [0, 5];
+ $scope.completedCount = 0;
+ $scope.maxCount = 5;
+ $scope.complete = function() {
+  if ($scope.completedCount < $scope.maxCount) {
+   $scope.completedCount++;
+  }
+  $scope.data = [$scope.completedCount, $scope.maxCount - $scope.completedCount];
+  $("#pie").Chart({data: $scope.data}); 
+ }
+});
