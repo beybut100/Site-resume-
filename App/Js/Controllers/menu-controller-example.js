@@ -63,15 +63,29 @@ myApp.controller("LogoController", function ($scope) {
 });
 
 myApp.controller("TestController", function ($scope) {
- $scope.labels = ["Completed", "Not completed"];
- $scope.data = [0, 5];
+ $scope.labels = ['Пройдено', 'Залишилось'];
  $scope.completedCount = 0;
- $scope.maxCount = 5;
+ $scope.maxCount = 10;
+ $scope.data = [0, 10];
+ $scope.chart = null;
+ $scope.init = function() {
+  var data = {
+    labels: $scope.labels,
+    datasets: [{
+     data: $scope.data,
+     backgroundColor: [ "#4169E1","#FFFF00" ]
+    }]
+   };
+  $scope.chart = new Chart($("#pie"),{type: 'pie', data: data});
+ };
  $scope.complete = function() {
-  if ($scope.completedCount < $scope.maxCount) {
-   $scope.completedCount++;
+  
+  if ($scope.completedCount >= $scope.maxCount) {
+   return
   }
+  $scope.completedCount++;
   $scope.data = [$scope.completedCount, $scope.maxCount - $scope.completedCount];
-  $("#pie").Chart({data: $scope.data}); 
+  $scope.chart.data.datasets[0].data = $scope.data;
+  $scope.chart.update();
  }
 });

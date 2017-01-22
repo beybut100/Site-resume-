@@ -79,18 +79,16 @@
           <input type="radio" name="food"> 
 
             </div>
-<div style="width: 30%;" ng-controller="TestController">
- <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options"></canvas>
- <input type="button" ng-click="complete()" value="ADD">
-</div>
-        
-</div>
 
 <button type="button" class="btn btn-success victorinbutton btn-lg">Відповісти!</button>
 
-  </div>
-<div style="width: 30%;" ng-controller="TestController">
- <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options"></canvas>
+        
+</div>
+
+
+
+<div style="width: 30%; float: right; margin-top: 10%;" ng-controller="TestController">
+ <canvas id="pie" class="chart chart-pie" ng-init="init()"></canvas>
  <input type="button" ng-click="complete()" value="ADD">
 </div>
 
