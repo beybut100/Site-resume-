@@ -89,3 +89,32 @@ myApp.controller("TestController", function ($scope) {
   $scope.chart.update();
  }
 });
+
+myApp.controller("LogoController", function ($scope) {
+  $scope.questions = [
+  {
+    id: 1;
+    question-text : "Яка улюлена страва Юрія Зелінського?",
+    answers: [
+    {id: 1, answer-text: "Голубці", iscorrect: true},
+    {id: 2, answer-text: "Яблучний пиріг", iscorrect: false},
+    {id: 3, answer-text: "Пельмені", iscorrect: false},
+    {id: 4, answer-text: "Зрази з грибами", iscorrect: false}
+    ]    
+
+  }, {
+    id: 2;
+    question-text : "Улюблений фільм Юрія Зелінського"?",
+    answers: [
+    {id: 1, answer-text: "Форест Гамп", iscorrect: true},
+    {id: 2, answer-text: "Американський пиріг", iscorrect: false},
+    {id: 3, answer-text: "Брат-2", iscorrect: false},
+    {id: 4, answer-text: "Втеча із Шоушенка", iscorrect: false}
+    ] 
+
+  };    
+
+  };
+
+  ]
+}
