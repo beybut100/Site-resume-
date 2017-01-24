@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html ng-app ="myApp" style="height: 100%;" >
-
-<head>
-				<title>Сторінки вікторини</title>
+		<head>
+				<title>Главная страница</title>
 				<meta charset="UTF-8">
 
 
@@ -16,17 +15,12 @@
 				 <link rel = "stylesheet" type = "text/css" href="Css/example.css">
 
 				<script type = "text/javascript" src = "libraries/Bootstrap/bootstrap-3.3.6/dist/js/bootstrap.js"></script>
-
-			 <script type="text/javascript" src = "Js/myApp.js"></script>
-
-			 <script src="libraries/ChartJs/Chart.js"></script>
+				<script src="libraries/ChartJs/Chart.js"></script>
  <script src="libraries/AngularChartJs/angular-chart.js"></script>
 
+			 <script type="text/javascript" src = "Js/myApp.js"></script>
 <script type="text/javascript" src="Js/Controllers/menu-controller-example.js"></script>
 		</head>
-		<body style="height: 100%;" >
-		
-		</body>
 		<body style="height: 100%;" >
 	<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid" style="height: 60px" ng-controller="LogoController">
@@ -55,31 +49,19 @@
 
 </nav>
 
-<section style="height: 100%;">
-	<div class="container " style="height: 100%;">
+
+
+<section style="height: 100%;" ng-controller="QuizController">
+	<div class="container " style="height: 100%;" >
 	<div class="polls col-md-6"  style="height: 100%;" >
-	<div class="question"><p class="text-poll" > Яка улюблена страва Юрія Зелінського? </p></div>
- <div class="answerbox">
-    <span class="answer">Голубці </span>
-          <input type="radio" name="food"> 
-        
-</div>
- <div class="answerbox">
-    <span class="answer"> Яблучний пиріг </span>
-          <input type="radio" name="food"> 
-       
-</div>
- <div class="answerbox">
-    <span class="answer"> Пельмені </span>
-          <input type="radio" name="food"> 
-        
-</div>
-    <div class="answerbox">
-    <span class="answer"> Зрази з грибами </span>
-          <input type="radio" name="food"> 
-
-            </div>
-
+	<div class="question"><p class="text-poll" > {{currentQuestion.question_text}} </p></div>
+	<ng-repeat ng-repeat="item in currentQuestion.answers">
+                <div class="answerbox" ng-click="selectrightanswer($event, item.id)">
+                    <span class="answer">{{item.answer_text}}</span>
+                    <input type="radio" name="food" value="item.id">
+                </div>
+            </ng-repeat>
+ 
 <button type="button" class="btn btn-success victorinbutton btn-lg">Відповісти!</button>
 
         
@@ -92,8 +74,6 @@
  <input type="button" ng-click="complete()" value="ADD">
 </div>
 
-
-
 </section>
 
-</html>
+</body>

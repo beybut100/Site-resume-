@@ -90,31 +90,40 @@ myApp.controller("TestController", function ($scope) {
  }
 });
 
-myApp.controller("LogoController", function ($scope) {
+myApp.controller("QuizController", function ($scope) {
   $scope.questions = [
   {
-    id: 1;
-    question-text : "Яка улюлена страва Юрія Зелінського?",
+    id: 1,
+    question_text : "Яка улюлена страва Юрія Зелінського?",
     answers: [
-    {id: 1, answer-text: "Голубці", iscorrect: true},
-    {id: 2, answer-text: "Яблучний пиріг", iscorrect: false},
-    {id: 3, answer-text: "Пельмені", iscorrect: false},
-    {id: 4, answer-text: "Зрази з грибами", iscorrect: false}
+    {id: 1, answer_text: "Голубці", iscorrect: true},
+    {id: 2, answer_text: "Яблучний пиріг", iscorrect: false},
+    {id: 3, answer_text: "Пельмені", iscorrect: false},
+    {id: 4, answer_text: "Зрази з грибами", iscorrect: false}
     ]    
 
   }, {
-    id: 2;
-    question-text : "Улюблений фільм Юрія Зелінського"?",
+    id: 2,
+    question_text : "Улюблений фільм Юрія Зелінського ?",
     answers: [
-    {id: 1, answer-text: "Форест Гамп", iscorrect: true},
-    {id: 2, answer-text: "Американський пиріг", iscorrect: false},
-    {id: 3, answer-text: "Брат-2", iscorrect: false},
-    {id: 4, answer-text: "Втеча із Шоушенка", iscorrect: false}
+    {id: 1, answer_text: "Форест Гамп", iscorrect: true},
+    {id: 2, answer_text: "Американський пиріг", iscorrect: false},
+    {id: 3, answer_text: "Брат 2", iscorrect: false},
+    {id: 4, answer_text: "Втеча із Шоушенка", iscorrect: false}
     ] 
+  }    
 
-  };    
+  ];
+  $scope.currentQuestion = $scope.questions[0];
+  $scope.selectrightanswer = function (id) {
+  
+   $(".answerright").removeClass("answerright");
+   $(event.target).addClass("answerright");
+   
 
-  };
 
-  ]
-}
+  }
+
+
+
+});
