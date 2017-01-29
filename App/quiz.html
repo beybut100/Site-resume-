@@ -56,13 +56,13 @@
 	<div class="polls col-md-6"  style="height: 100%;" >
 	<div class="question"><p class="text-poll" > {{currentQuestion.question_text}} </p></div>
 	<ng-repeat ng-repeat="item in currentQuestion.answers">
-                <div class="answerbox" ng-click="selectrightanswer($event, item.id)">
+                <div  id="answer_{{item.id}}" class="answerbox" ng-click="selectrightanswer(item.id)">
                     <span class="answer">{{item.answer_text}}</span>
                     <input type="radio" name="food" value="item.id">
                 </div>
             </ng-repeat>
  
-<button type="button" class="btn btn-success victorinbutton btn-lg">Відповісти!</button>
+<button type="button" class="btn btn-success victorinbutton btn-lg" ng-click="checkanswer">Відповісти!</button>
 
         
 </div>

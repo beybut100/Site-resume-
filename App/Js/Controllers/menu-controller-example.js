@@ -118,12 +118,30 @@ myApp.controller("QuizController", function ($scope) {
   $scope.selectrightanswer = function (id) {
   
    $(".answerright").removeClass("answerright");
-   $(event.target).addClass("answerright");
-   
+    $("#answer_"+id).addClass("answerright")
+ $scope.answerid = id;
+}
+  $scope.pushanswer = function () {
+      $scope.getCorrectAnswer = function () {
+          $scope.answers.forEach(function(item) {`
+            if (item.iscorrect) {
+              return item
+            });
+      $scope.checkAnswer = function (item) {
+       
+          if ($scope.answerid=item.id) {
+            return true;
 
+                }
+                return false;
+      }
+      
 
   }
+  }
+
+});  
 
 
 
-});
+
