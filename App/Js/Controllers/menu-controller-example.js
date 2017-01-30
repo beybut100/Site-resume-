@@ -123,24 +123,49 @@ myApp.controller("QuizController", function ($scope) {
 }
   
  $scope.getCorrectAnswer = function () {
-          $scope.answers.forEach(function(item) {`
-            if (item.iscorrect) {
-              return item
+         for (i=0; i< $scope.currentQuestion.answers.length;i++ ) {
+            if ($scope.currentQuestion.answers[i].iscorrect) {
+    console.log($scope.currentQuestion.answers[i].iscorrect);
+              return $scope.currentQuestion.answers[i];
             } 
-          })
+    }
         }
  $scope.checkAnswer = function (item) {
        
-          if ($scope.answerid=item.id) {
+          if ($scope.answerid==item.id) {
             return true;
 
                 }
+
                 return false;
       }
-      
+
+
+ $scope.pushanswer = function() {
+    var correctAnswer = this.getCorrectAnswer();
+    if (this.checkAnswer(correctAnswer)) {
+
+      $scope.startAnimationOnCorrectAnswer()
+    }
+
+     else { alert("8")} 
+
+
 
   }
-  }
+
+$scope.startAnimationOnCorrectAnswer = function (id) {
+  
+var timerId = setInterval(function(id) {
+  $("#answer_"+id).removeClass("answerright")
+  $("#answer_"+id).addClass("dynamicAnsweright");
+
+  
+}, 50, id);
+
+}
+  
+
 
 });  
 
