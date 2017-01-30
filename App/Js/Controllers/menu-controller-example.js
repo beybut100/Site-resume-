@@ -121,13 +121,15 @@ myApp.controller("QuizController", function ($scope) {
     $("#answer_"+id).addClass("answerright")
  $scope.answerid = id;
 }
-  $scope.pushanswer = function () {
-      $scope.getCorrectAnswer = function () {
+  
+ $scope.getCorrectAnswer = function () {
           $scope.answers.forEach(function(item) {`
             if (item.iscorrect) {
               return item
-            });
-      $scope.checkAnswer = function (item) {
+            } 
+          })
+        }
+ $scope.checkAnswer = function (item) {
        
           if ($scope.answerid=item.id) {
             return true;
