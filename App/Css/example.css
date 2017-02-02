@@ -368,3 +368,12 @@ font-size: 16px;
 .dynamicAnsweright {
 	background-color: #ADFF2F;
 }
+.answerwrong {
+	background-color: #FF0000;
+}
+.imagequizblock {
+	height: 80px;
+	position: absolute;
+	top: 60px;
+	left: 100%;
+}

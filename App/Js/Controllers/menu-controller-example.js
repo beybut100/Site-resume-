@@ -91,12 +91,37 @@ myApp.controller("TestController", function ($scope) {
 });
 
 myApp.controller("QuizController", function ($scope) {
+  $scope.labels = ['Пройдено', 'Залишилось'];
+ $scope.completedCount = 0;
+ $scope.maxCount = 10;
+ $scope.data = [0, 10];
+ $scope.chart = null;
+ $scope.init = function() {
+  var data = {
+    labels: $scope.labels,
+    datasets: [{
+     data: $scope.data,
+     backgroundColor: [ "#4169E1","#FFFF00" ]
+    }]
+   };
+  $scope.chart = new Chart($("#pie"),{type: 'pie', data: data});
+ };
+ $scope.complete = function() {
+  
+  if ($scope.completedCount >= $scope.maxCount) {
+   return
+  }
+  $scope.completedCount++;
+  $scope.data = [$scope.completedCount, $scope.maxCount - $scope.completedCount];
+  $scope.chart.data.datasets[0].data = $scope.data;
+  $scope.chart.update();
+ }
   $scope.questions = [
   {
     id: 1,
     question_text : "Яка улюлена страва Юрія Зелінського?",
     answers: [
-    {id: 1, answer_text: "Голубці", iscorrect: true},
+    {id: 1, answer_text: "Голубці", iscorrect: true, img: "http://jisty.com.ua/wp-content/uploads/2015/05/Golubtsi-po-karptski.jpg" },
     {id: 2, answer_text: "Яблучний пиріг", iscorrect: false},
     {id: 3, answer_text: "Пельмені", iscorrect: false},
     {id: 4, answer_text: "Зрази з грибами", iscorrect: false}
@@ -128,6 +153,7 @@ myApp.controller("QuizController", function ($scope) {
     console.log($scope.currentQuestion.answers[i].iscorrect);
               return $scope.currentQuestion.answers[i];
             } 
+
     }
         }
  $scope.checkAnswer = function (item) {
@@ -145,25 +171,66 @@ myApp.controller("QuizController", function ($scope) {
     var correctAnswer = this.getCorrectAnswer();
     if (this.checkAnswer(correctAnswer)) {
 
-      $scope.startAnimationOnCorrectAnswer()
+      $scope.startAnimationOnCorrectAnswer(correctAnswer.id)
+      $scope.showimage(correctAnswer)
+       $scope.complete()
     }
 
-     else { alert("8")} 
+     else {
+      $scope.startAnimationOnWrongAnswer($scope.answerid)
+      $scope.showimage(correctAnswer)
+       $scope.complete()
+    } 
 
 
 
   }
 
 $scope.startAnimationOnCorrectAnswer = function (id) {
-  
-var timerId = setInterval(function(id) {
-  $("#answer_"+id).removeClass("answerright")
-  $("#answer_"+id).addClass("dynamicAnsweright");
+  var status = true;  
 
-  
-}, 50, id);
+var timerId =  setInterval(function(id) {
 
+  $("#answer_"+id).removeClass("answerright");
+  if (status) {
+    $("#answer_"+id).addClass("dynamicAnsweright");
+    status = false;
+  } else {
+    $("#answer_"+id).removeClass("dynamicAnsweright");
+    status = true;
+  }
+  var timestop = setTimeout(function(){
+    clearTimeout(timerId);
+  },4000)
+  
+  
+}, 300, id);
 }
+
+$scope.startAnimationOnWrongAnswer =  function (id) {
+  var status = true;  
+var timerId =  setInterval(function(id) {
+
+  $("#answer_"+id).removeClass("answerright");
+  if (status) {
+    $("#answer_"+id).addClass("answerwrong ");
+    status = false;
+  } else {
+    $("#answer_"+id).removeClass("answerwrong ");
+    status = true;
+  }
+  var timestop = setTimeout(function(){
+    clearTimeout(timerId);
+  },4000)
+  
+
+  },300,id);
+}
+$scope.showimage = function (correctAnswer) {
+$scope.CorrectImage = correctAnswer.img;
+}
+
+$scope.CorrectImage = null;
   
 
 

@@ -51,7 +51,7 @@
 
 
 
-<section style="height: 100%;" ng-controller="QuizController">
+<section style="height: 100%;" ng-controller="QuizController  ">
 	<div class="container " style="height: 100%;" >
 	<div class="polls col-md-6"  style="height: 100%;" >
 	<div class="question"><p class="text-poll" > {{currentQuestion.question_text}} </p></div>
@@ -61,17 +61,20 @@
                     <input type="radio" name="food" value="item.id">
                 </div>
             </ng-repeat>
+            <div style="width: 30%; float: right; margin-top: 10%;" >
+            <button type="button" class="btn btn-success victorinbutton btn-lg" ng-click="pushanswer()"
+  value="ADD">Відповісти!</button>
+ <canvas id="pie" class="chart chart-pie" ng-init="init()"></canvas>
  
-<button type="button" class="btn btn-success victorinbutton btn-lg" ng-click="pushanswer()">Відповісти!</button>
 
+<div ><img src="CorrectImage" ng-src="{{CorrectImage}}" class="imagequizblock"></div>
         
 </div>
 
 
 
-<div style="width: 30%; float: right; margin-top: 10%;" ng-controller="TestController">
- <canvas id="pie" class="chart chart-pie" ng-init="init()"></canvas>
- <input type="button" ng-click="complete()" value="ADD">
+
+
 </div>
 
 </section>
