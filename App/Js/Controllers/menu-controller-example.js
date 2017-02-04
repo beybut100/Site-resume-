@@ -62,33 +62,7 @@ myApp.controller("LogoController", function ($scope) {
  }
 });
 
-myApp.controller("TestController", function ($scope) {
- $scope.labels = ['Пройдено', 'Залишилось'];
- $scope.completedCount = 0;
- $scope.maxCount = 10;
- $scope.data = [0, 10];
- $scope.chart = null;
- $scope.init = function() {
-  var data = {
-    labels: $scope.labels,
-    datasets: [{
-     data: $scope.data,
-     backgroundColor: [ "#4169E1","#FFFF00" ]
-    }]
-   };
-  $scope.chart = new Chart($("#pie"),{type: 'pie', data: data});
- };
- $scope.complete = function() {
-  
-  if ($scope.completedCount >= $scope.maxCount) {
-   return
-  }
-  $scope.completedCount++;
-  $scope.data = [$scope.completedCount, $scope.maxCount - $scope.completedCount];
-  $scope.chart.data.datasets[0].data = $scope.data;
-  $scope.chart.update();
- }
-});
+
 
 myApp.controller("QuizController", function ($scope) {
   $scope.labels = ['Пройдено', 'Залишилось'];
@@ -169,24 +143,41 @@ myApp.controller("QuizController", function ($scope) {
 
  $scope.pushanswer = function() {
     var correctAnswer = this.getCorrectAnswer();
+    $scope.complete()
+    var Promises = [];
     if (this.checkAnswer(correctAnswer)) {
+       var Promise1 = new Promise (function (resolve, reject) {
+      $scope.startAnimationOnCorrectAnswer(correctAnswer.id,resolve)
 
-      $scope.startAnimationOnCorrectAnswer(correctAnswer.id)
-      $scope.showimage(correctAnswer)
-       $scope.complete()
+       
+      })
+        Promises.push(Promise1);
+     
     }
 
      else {
-      $scope.startAnimationOnWrongAnswer($scope.answerid)
-      $scope.showimage(correctAnswer)
-       $scope.complete()
+      var Promise2 = new Promise (function (resolve, reject) {
+        $scope.startAnimationOnWrongAnswer($scope.answerid,resolve)
+       
+      })
+        Promises.push(Promise2);
+       var Promise3 = new Promise (function (resolve, reject) {
+        
+      $scope.startAnimationOnCorrectAnswer(correctAnswer.id,resolve)
+        
+      })
+        Promises.push(Promise3);
+      
     } 
+    Promise.all(promises).then(results => {
+    $scope.showimage(correctAnswer);
+ });
 
-
+    
 
   }
 
-$scope.startAnimationOnCorrectAnswer = function (id) {
+$scope.startAnimationOnCorrectAnswer = function (id,resolve) {
   var status = true;  
 
 var timerId =  setInterval(function(id) {
@@ -201,13 +192,14 @@ var timerId =  setInterval(function(id) {
   }
   var timestop = setTimeout(function(){
     clearTimeout(timerId);
+     resolve();
   },4000)
   
   
 }, 300, id);
 }
 
-$scope.startAnimationOnWrongAnswer =  function (id) {
+$scope.startAnimationOnWrongAnswer =  function (id,resolve) {
   var status = true;  
 var timerId =  setInterval(function(id) {
 
@@ -221,6 +213,7 @@ var timerId =  setInterval(function(id) {
   }
   var timestop = setTimeout(function(){
     clearTimeout(timerId);
+     resolve();
   },4000)
   
 
