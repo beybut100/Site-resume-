@@ -114,6 +114,7 @@ myApp.controller("QuizController", function ($scope) {
 
   ];
   $scope.currentQuestion = $scope.questions[0];
+
   $scope.selectrightanswer = function (id) {
   
    $(".answerright").removeClass("answerright");
@@ -169,11 +170,34 @@ myApp.controller("QuizController", function ($scope) {
         Promises.push(Promise3);
       
     } 
-    Promise.all(promises).then(results => {
+    Promise.all(Promises).then(results => {
     $scope.showimage(correctAnswer);
+     setTimeout(function() {
+   $scope.hideImage();
+   $scope.nextQuestion();
+  }, 1000);
  });
 
-    
+   $scope.hideImage = function () {
+    $scope.CorrectImage = "";
+     $scope.$apply();
+   }
+
+   $scope.nextQuestion = function ()
+
+    {   
+      var i;
+
+      for (var i = 0; i <  $scope.questions.length; i++) {
+      break
+      }
+     i++;
+
+    if (i < $scope.questions.length) {
+    $scope.currentQuestion = $scope.questions[i];
+    $scope.$apply();
+  }
+   }
 
   }
 
@@ -192,6 +216,7 @@ var timerId =  setInterval(function(id) {
   }
   var timestop = setTimeout(function(){
     clearTimeout(timerId);
+    $("#answer_"+id).removeClass("dynamicAnsweright");
      resolve();
   },4000)
   
@@ -213,6 +238,7 @@ var timerId =  setInterval(function(id) {
   }
   var timestop = setTimeout(function(){
     clearTimeout(timerId);
+    $("#answer_"+id).removeClass("answerwrong ");
      resolve();
   },4000)
   
@@ -221,9 +247,10 @@ var timerId =  setInterval(function(id) {
 }
 $scope.showimage = function (correctAnswer) {
 $scope.CorrectImage = correctAnswer.img;
+ $scope.$apply();
 }
 
-$scope.CorrectImage = null;
+$scope.CorrectImage = "";
   
 
 
