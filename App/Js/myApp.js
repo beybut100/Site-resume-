@@ -1,18 +1,22 @@
 
 var myApp = angular.module('myApp', ['chart.js' , 'ngRoute']);
 
-app.config(function($routeProvider) {
+myApp.config(function($routeProvider) {
   $routeProvider
   .when("/", {
-    templateUrl : "index.html"
+    templateUrl : "about-me.html",
+        activeTab: 'about-me'
   })
   .when("/about-me", {
-    templateUrl : "about-me.html"
+    templateUrl : "about-me.html",
+        activeTab: 'about-me'
   })
   .when("/quiz", {
-    templateUrl : "quiz.html"
+    templateUrl : "quiz.html",
+        activeTab: 'quiz'
   })
-  .when("/kontcts", {
-    templateUrl : "html-kontacts.html"
+  .when("/html-kontacts", {
+    templateUrl : "html-kontacts.html",
+        activeTab: 'html-kontacts'
   });
 });

@@ -35,11 +35,10 @@
 
 		<div id="navbarCollapse" class="collapse navbar-collapse" ng-controller = "phonesController">
 			<ul class="nav navbar-nav standard-link">
-			 <li class="active active-color" id="active-color"><a href="#" ng-click="select($event)">Про мене</a></li>
-				<li class= "standard-link"><a href="#" ng-click="select($event)">Інтерактивна вікторина</a></li>
-				<li class= "standard-link"><a href="#" ng-click="select($event)">Контакти</a></li>
-
-			</ul>
+		<li ng-class="{'active active-color': $route.current.activeTab == 'about-me'}"><a href="#/">Про мене</a></li>
+    <li ng-class="{'active active-color': $route.current.activeTab == 'quiz'}"><a href="#/quiz">Інтерактивна вікторина</a></li>
+    <li ng-class="{'active active-color': $route.current.activeTab == 'html-kontacts'}"><a href="#/html-kontacts">Контакти</a></li>
+			</ul> 
 
 				</div>
 
@@ -52,3 +51,5 @@
 
 <ng-view></ng-view>
 
+</body>
+</html>

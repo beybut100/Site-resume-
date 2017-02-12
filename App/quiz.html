@@ -10,10 +10,14 @@
                     <input type="radio" name="food" value="item.id">
                 </div>
             </ng-repeat>
-            <div style="width: 30%; float: right; margin-top: 10%;" >
+            <div style="width: 30%; float: right; margin-top: 15%;" >
             <button type="button" class="btn btn-success victorinbutton btn-lg" ng-click="pushanswer()"
   value="ADD">Відповісти!</button>
- <canvas id="pie" class="chart chart-pie" ng-init="init()"></canvas>
+  </div>
+  </div>
+  <div class="right-chart">
+ <canvas id="pie" class="chart chart-pie right-chart" " ng-init="init()"></canvas>
+ </div>
  
 
 <div  ><img ng-src="{{CorrectImage}}" class="imagequizblock" ng-show="CorrectImage.length!=0"></div>
