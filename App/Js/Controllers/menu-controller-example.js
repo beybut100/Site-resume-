@@ -176,7 +176,7 @@ myApp.controller("QuizController", function ($scope) {
      setTimeout(function() {
    $scope.hideImage();
    $scope.nextQuestion();
-  }, 1000);
+  }, 2000);
  });
 
    $scope.hideImage = function () {
@@ -219,7 +219,7 @@ var timerId =  setInterval(function(id) {
     clearTimeout(timerId);
     $("#answer_"+id).removeClass("dynamicAnsweright");
      resolve();
-  },4000)
+  },3000)
   
   
 }, 300, id);
@@ -241,7 +241,7 @@ var timerId =  setInterval(function(id) {
     clearTimeout(timerId);
     $("#answer_"+id).removeClass("answerwrong ");
      resolve();
-  },4000)
+  },3000)
   
 
   },300,id);
@@ -254,11 +254,16 @@ $scope.CorrectImage = correctAnswer.img;
 $scope.CorrectImage = "";
   
 
-
 });  
 
 
+myApp.controller("TimeLineController", function ($scope) {
+  $scope.moviewheel = function ($event) {
+   dragObject.downX = $event.pageX;
+  dragObject.downY = $event.pageY; 
 
+   }
+}
 
 
 
