@@ -388,3 +388,35 @@ font-size: 16px;
 	top: 42%;
 	left: 43%;
 }
+
+.onestate {
+
+height: 100%;
+width: 100%;
+background-color: red;
+}
+.secondstate {
+
+height: 100%;
+width: 100%;
+background-color: pink;
+}
+.thirdstate {
+
+height: 100%;
+width: 100%;
+background-color: yellow;
+}
+.fourthstate {
+
+height: 100%;
+width: 100%;
+background-color: black;
+}
+
+
+
+
+
+
+}

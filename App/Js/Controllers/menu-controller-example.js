@@ -257,9 +257,11 @@ $scope.CorrectImage = "";
 });  
 
 
-
-var sliderElem = document.getElementsByClassName("wheel")
-    var thumbElem = document.getElementsByClassName("line-one");
+setTimeout ( function() {
+var sliderElem = document.getElementsByClassName("line-one")[0];
+console.log(sliderElem)
+    var thumbElem = document.getElementsByClassName("wheel")[0];
+console.log(thumbElem)
 
     thumbElem.onmousedown = function(e) {
       var thumbCoords = getCoords(thumbElem);
@@ -282,7 +284,31 @@ var sliderElem = document.getElementsByClassName("wheel")
         }
 
         thumbElem.style.left = newLeft + 'px';
+
+            if (newLeft < 0.25*sliderElem.offsetWidth) {
+
+ $(".js_photo").removeClass(".secondstate").addClass("onestate");
+       };
+
+            if (newLeft > 0.25*sliderElem.offsetWidth && newLeft < 0.5*sliderElem.offsetWidth ) {
+
+ $(".js_photo").removeClass(".onestate thirdstate fourthstate").addClass("secondstate");
+console.log(sliderElem.style.width)
+       };
+
+       if (newLeft > 0.5*sliderElem.offsetWidth && newLeft < 0.75*sliderElem.offsetWidth ) {
+
+ $(".js_photo").removeClass(".onestate secondstate fourthstate ").addClass("thirdstate");
+console.log(sliderElem.style.width)
+       };
+       if (newLeft > 0.75*sliderElem.offsetWidth && newLeft < sliderElem.offsetWidth ) {
+
+alert("6")
+$(".js_photo").removeClass(".onestate thirdstate ").addClass("fourthstate");
+       };
+       
       }
+
 
       document.onmouseup = function() {
         document.onmousemove = document.onmouseup = null;
@@ -303,7 +329,9 @@ var sliderElem = document.getElementsByClassName("wheel")
         left: box.left + pageXOffset
       };
 
-    }
+    
+
+    } }, 1000);
 
  
 
