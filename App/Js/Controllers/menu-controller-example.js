@@ -348,7 +348,7 @@ myApp.controller("Quotecontroller", function ($scope) {
     ]
     $scope.currentQuote = $scope.quotes[0];
     $scope.changequote = function () {
-        console.log("chagequote");
+       
 
         setInterval(function() {
             console.log("setInterval");
@@ -362,6 +362,17 @@ myApp.controller("Quotecontroller", function ($scope) {
 
 
         }, 2000)
+      $scope.currentindex = 0;
+      $scope.isCurrentSlideIndex($index) = function (index) {
+        return $scope.currentindex == index 
+
+      }
+      $scope.nextslide = function () {
+        if ($scope.currentindex < $scope.quotes.length-1 ) {
+          $scope.currentindex++
+        }
+        else { $scope.currentindex = 0  }
+      }
     }
 });
 

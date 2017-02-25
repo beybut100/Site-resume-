@@ -142,14 +142,10 @@
 </section>
 <div class="myblockqoute col-md-6" ng-controller = "Quotecontroller" ng-init="changequote()" >
 <div class = "onequote">
-	<blockquote ng-repeat="item in quotes"  >
+	<blockquote ng-repeat="item in quotes" class = "qouteslide qouteslideanimation" ng-hide="!isCurrentSlideIndex($index)" >
 
   <p>{{item.quote_text}}</p>
 </blockquote  >
 </div>
 
-
-
-
-<div ng-src="" > </div>
 </div>
