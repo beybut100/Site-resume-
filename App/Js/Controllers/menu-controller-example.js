@@ -287,24 +287,24 @@ console.log(thumbElem)
 
             if (newLeft < 0.25*sliderElem.offsetWidth) {
 
- $(".js_photo").removeClass(".secondstate").addClass("onestate");
+ $(".js_photo").removeClass("secondstate").addClass("onestate");
        };
 
             if (newLeft > 0.25*sliderElem.offsetWidth && newLeft < 0.5*sliderElem.offsetWidth ) {
 
- $(".js_photo").removeClass(".onestate thirdstate fourthstate").addClass("secondstate");
+ $(".js_photo").removeClass("onestate thirdstate fourthstate").addClass("secondstate");
 console.log(sliderElem.style.width)
        };
 
        if (newLeft > 0.5*sliderElem.offsetWidth && newLeft < 0.75*sliderElem.offsetWidth ) {
 
- $(".js_photo").removeClass(".onestate secondstate fourthstate ").addClass("thirdstate");
+ $(".js_photo").removeClass(" secondstate fourthstate ").addClass("thirdstate");
 console.log(sliderElem.style.width)
        };
        if (newLeft > 0.75*sliderElem.offsetWidth && newLeft < sliderElem.offsetWidth ) {
 
-alert("6")
-$(".js_photo").removeClass(".onestate thirdstate ").addClass("fourthstate");
+
+$(".js_photo").removeClass(" thirdstate ").addClass("fourthstate");
        };
        
       }
@@ -333,12 +333,37 @@ $(".js_photo").removeClass(".onestate thirdstate ").addClass("fourthstate");
 
     } }, 1000);
 
- 
+ myApp.controller("TimeLineController", function ($scope) {
+    $scope.init = function () {   
+      $(".js_photo").removeClass("onestate secondstate fourthstate ").addClass("thirdstate");
+      console.log("test");
+}
+});
+
+myApp.controller("Quotecontroller", function ($scope) {
+
+    $scope.quotes = [ { id: 1, quote_text: "Втеча із Шоушенка" } ,
+        {  id: 2, quote_text: "Життя прожити - не поле перейти"  },
+        {  id: 3, quote_text: "Не знаю де ти"  }
+    ]
+    $scope.currentQuote = $scope.quotes[0];
+    $scope.changequote = function () {
+        console.log("chagequote");
+
+        setInterval(function() {
+            console.log("setInterval");
+
+            if ( $scope.currentQuote.id < 3  ) {
+                $scope.currentQuote =  $scope.quotes[$scope.currentQuote.id]
+            } else {
+                $scope.currentQuote =  $scope.quotes[0]
+            }
+            $scope.$apply();
 
 
-
-
-
+        }, 2000)
+    }
+});
 
 
 

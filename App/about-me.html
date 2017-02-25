@@ -17,10 +17,10 @@
 
 
    </div >
-   <div class="col-md-5 ">
+   <div class="col-md-5 " ng-controller="TimeLineController" >
     <h4 style="text-align: center;"> Хронометраж мого життя життя </h4>
     <div class="row stage-of-life">
-     <div class="js_photo">
+     <div class="js_photo" ng-init="init()">
      </div>
     </div>
     <div class="row timing-line">
@@ -140,9 +140,16 @@
 				</div>
 	</div>
 </section>
-<div class="myblockqoute col-md-6" >
-	<blockquote>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-</blockquote>
+<div class="myblockqoute col-md-6" ng-controller = "Quotecontroller" ng-init="changequote()" >
+<div class = "onequote">
+	<blockquote ng-repeat="item in quotes"  >
+
+  <p>{{item.quote_text}}</p>
+</blockquote  >
+</div>
+
+
+
+
 <div ng-src="" > </div>
 </div>
