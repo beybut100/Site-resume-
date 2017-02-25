@@ -1,5 +1,5 @@
 
-var myApp = angular.module('myApp', ['chart.js' , 'ngRoute' , 'ngAnimate', 'ngTouch' ]);
+var myApp = angular.module('myApp', ['chart.js' , 'ngRoute' , 'ngAnimate' ]);
 
 myApp.config(function($routeProvider) {
   $routeProvider
@@ -21,7 +21,8 @@ myApp.config(function($routeProvider) {
   });
 
 
-}
+});
+
 myApp.animation("qouteslideanimation", function () {
   return {
     beforeAddClass : function (element, classname, done) {
@@ -30,19 +31,17 @@ myApp.animation("qouteslideanimation", function () {
         TweenMax.to(element, 0.5, {left: finishPoint, onComplete: done });
       }
       else { done() }
-    }
+    },
 
     removeClass : function (element, classname, done) {
-      if (classname == nghide) {
+      if (classname == "ng-hide") {
         element.removeClass('ng-hide');
         var startPoint = -element.parent().width();
         TweenMax.fromTo(element, 0.5, { left: startPoint }, {left: 0, onComplete: done });
       }
     }
   }
-})
-
-);
+});
 
 
 
