@@ -23,11 +23,11 @@ myApp.config(function($routeProvider) {
 
 });
 
-myApp.animation("qouteslideanimation", function () {
+myApp.animation(".qouteslideanimation", function () {
   return {
     beforeAddClass : function (element, classname, done) {
-      if (classname == nghide){
-        var finishPoint = element.parent().width();
+      if (classname == "ng-hide"){
+        var finishPoint = element.parent()[0].clientWidth;
         TweenMax.to(element, 0.5, {left: finishPoint, onComplete: done });
       }
       else { done() }
@@ -36,10 +36,13 @@ myApp.animation("qouteslideanimation", function () {
     removeClass : function (element, classname, done) {
       if (classname == "ng-hide") {
         element.removeClass('ng-hide');
-        var startPoint = -element.parent().width();
+        var startPoint = -element.parent()[0].clientWidth;
         TweenMax.fromTo(element, 0.5, { left: startPoint }, {left: 0, onComplete: done });
+
       }
+      else { done };
     }
+    
   }
 });
 

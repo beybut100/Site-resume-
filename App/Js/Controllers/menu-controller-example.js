@@ -351,19 +351,13 @@ myApp.controller("Quotecontroller", function ($scope) {
        
 
         setInterval(function() {
-            console.log("setInterval");
-
-            if ( $scope.currentQuote.id < 3  ) {
-                $scope.currentQuote =  $scope.quotes[$scope.currentQuote.id]
-            } else {
-                $scope.currentQuote =  $scope.quotes[0]
-            }
-            $scope.$apply();
+           $scope.nextslide()
+           $scope.$apply()
 
 
         }, 2000)
       $scope.currentindex = 0;
-      $scope.isCurrentSlideIndex($index) = function (index) {
+      $scope.isCurrentSlideIndex = function (index) {
         return $scope.currentindex == index 
 
       }
@@ -373,9 +367,18 @@ myApp.controller("Quotecontroller", function ($scope) {
         }
         else { $scope.currentindex = 0  }
       }
+
+
     }
 });
 
+myApp.controller("SelectPhotoController", function ($scope) {
+
+$scope.NextPhoto = function () {
+  
+}
+ 
+});
 
 
 
