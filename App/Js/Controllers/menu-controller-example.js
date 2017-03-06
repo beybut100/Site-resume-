@@ -374,10 +374,55 @@ myApp.controller("Quotecontroller", function ($scope) {
 
 myApp.controller("SelectPhotoController", function ($scope) {
 
-$scope.NextPhoto = function () {
-  
-}
- 
+$scope.images = [ { id: 1, src: "Img/myPhoto.jpg" }, { id: 2, src: "Img/myPhoto2.jpg" } ];
+
+$scope.currentimageindex = 0;
+
+$scope.isCurrentImageIndex = function (index) {
+        return $scope.currentimageindex == index 
+
+      }
+   $scope.nextImage = function () {
+        if ($scope.currentimageindex < $scope.images.length-1 ) {
+          $scope.currentimageindex++
+        }
+        else { $scope.currentimageindex = 0  }
+      }
+
+  $scope.hoverIn = function(index) {
+        if ($scope.isHover) {
+            return;
+        }
+
+        if ($scope.currentimageindex != index) {
+            return;
+        }
+        $scope.shortanimation();
+        $scope.isHover = true;
+    }
+  $scope.hoverOut = function(index) {
+        if (!$scope.isHover) {
+            return;
+        }
+        if ($scope.currentimageindex != index) {
+            return;
+        }
+        $scope.shortanimation();
+        $scope.isHover = false;
+    }
+
+    $scope.gradientname = "grad1"; 
+
+  $scope.shortanimation = function () {
+    $scope.gradientname = "grad2";
+
+    setTimeout(function(){
+         $scope.gradientname = "grad1";
+         $scope.nextImage();
+         $scope.$apply()
+    },2000)
+  }
+
 });
 
 
