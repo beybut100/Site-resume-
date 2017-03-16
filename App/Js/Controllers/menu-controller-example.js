@@ -126,8 +126,7 @@ myApp.controller("QuizController", function ($scope) {
  $scope.getCorrectAnswer = function () {
          for (i=0; i< $scope.currentQuestion.answers.length;i++ ) {
             if ($scope.currentQuestion.answers[i].iscorrect) {
-    console.log($scope.cur
-rentQuestion.answers[i].iscorrect);
+    console.log($scope.currentQuestion.answers[i].iscorrect);
               return $scope.currentQuestion.answers[i];
             } 
 
@@ -379,6 +378,8 @@ $scope.images = [ { id: 1, src: "Img/myPhoto.jpg" }, { id: 2, src: "Img/myPhoto2
 
 $scope.currentimageindex = 0;
 
+$scope.classnow="grad1";
+
 $scope.isCurrentImageIndex = function (index) {
         return $scope.currentimageindex == index 
 
@@ -399,6 +400,8 @@ $scope.isCurrentImageIndex = function (index) {
             return;
         }
         $scope.shortanimation();
+        $scope.classnow = "fullcircle";
+
         $scope.isHover = true;
     }
   $scope.hoverOut = function(index) {
@@ -410,6 +413,7 @@ $scope.isCurrentImageIndex = function (index) {
         }
         $scope.shortanimation();
         $scope.isHover = false;
+         $scope.classnow = "emptycircle";
     }
 
     $scope.gradientname = "grad1"; 
