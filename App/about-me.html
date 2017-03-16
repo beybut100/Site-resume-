@@ -6,19 +6,24 @@
    <div class="col-md-3 my-photo" ng-controller="SelectPhotoController"  >
    <ng-repeat ng-repeat="item in images">
      <img class="img-responsive" ng-show="isCurrentImageIndex($index)" src="{{item.src}}" ng-mouseover="hoverIn($index)" ng-mouseleave="hoverOut($index)">
-     <svg id="test" height="150" width="400">
-      <defs>
-       <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="500%">
-        <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
-        <stop offset="100%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
-       </linearGradient>
-       <linearGradient id="grad2" x1="0%" y1="500%" x2="0%" y2="0%">
-        <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
-        <stop offset="100%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
-       </linearGradient>
-      </defs>
+     <svg id="test" height="150" width="400" ng-class={{nowclass}}  >
+         <defs>
+			
+				   <linearGradient id="grad2" x1="0" y1="1" x2="0" y2="0">
+					   <!-- <stop offset="0%" stop-opacity="1" stop-color="royalblue"/> -->
+          <stop offset="0%" stop-opacity="1" stop-color="royalblue">
+            <animate attributeName="offset" values="0;1" repeatCount="1" dur="5s" begin="0s"/>
+          </stop>
+          <stop offset="0%" stop-opacity="0" stop-color="royalblue">
+            <animate attributeName="offset" values="0;1" repeatCount="1" dur="5s"  begin="0s"/>
+          </stop>
+         
+          <stop offset="100%" stop-opacity="0" stop-color="royalblue"/>
+          </linearGradient>
+			   </defs>
 
-      <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="url(#grad1)" ng-show="isCurrentImageIndex($index)" />
+    <circle class="emptycircle fullcircle" cx="50" cy="50" r="40" stroke="black" stroke-width="3"  >
+    
      </svg>
     </ng-repeat>
    

@@ -419,3 +419,13 @@ background-color: black;
 	position: absolute;
 	
 }
+
+.emptycircle {
+	background-color: yellow;
+}
+
+.fullcircle {
+	background-color: blue;
+}
+
+

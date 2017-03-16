@@ -126,7 +126,8 @@ myApp.controller("QuizController", function ($scope) {
  $scope.getCorrectAnswer = function () {
          for (i=0; i< $scope.currentQuestion.answers.length;i++ ) {
             if ($scope.currentQuestion.answers[i].iscorrect) {
-    console.log($scope.currentQuestion.answers[i].iscorrect);
+    console.log($scope.cur
+rentQuestion.answers[i].iscorrect);
               return $scope.currentQuestion.answers[i];
             } 
 
@@ -424,6 +425,9 @@ $scope.isCurrentImageIndex = function (index) {
   }
 
 });
+
+
+
 
 
 
